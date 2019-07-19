@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5C8772922E1D0A200583DD5 /* DYProgressAbility.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5C8772722E1D0A200583DD5 /* DYProgressAbility.a */; };
+		A5C8772B22E1D0FC00583DD5 /* DYHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5C8772522E1D0A200583DD5 /* DYHUD.bundle */; };
 		B3E7B58A1CC2AC0600A0062D /* RNFfToast.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNFfToast.m */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,11 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNFfToast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNFfToast.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5C8772422E1D0A200583DD5 /* DYProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYProgressHUD.h; sourceTree = "<group>"; };
+		A5C8772522E1D0A200583DD5 /* DYHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DYHUD.bundle; sourceTree = "<group>"; };
+		A5C8772622E1D0A200583DD5 /* DYProgressHUDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYProgressHUDConfig.h; sourceTree = "<group>"; };
+		A5C8772722E1D0A200583DD5 /* DYProgressAbility.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = DYProgressAbility.a; sourceTree = "<group>"; };
+		A5C8772822E1D0A200583DD5 /* UIImage+HUDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HUDHelper.h"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNFfToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFfToast.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNFfToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFfToast.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -33,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5C8772922E1D0A200583DD5 /* DYProgressAbility.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +60,21 @@
 			children = (
 				B3E7B5881CC2AC0600A0062D /* RNFfToast.h */,
 				B3E7B5891CC2AC0600A0062D /* RNFfToast.m */,
+				A5C8772322E1D0A200583DD5 /* DYProgressAbilitySL */,
 				134814211AA4EA7D00B7C361 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		A5C8772322E1D0A200583DD5 /* DYProgressAbilitySL */ = {
+			isa = PBXGroup;
+			children = (
+				A5C8772422E1D0A200583DD5 /* DYProgressHUD.h */,
+				A5C8772522E1D0A200583DD5 /* DYHUD.bundle */,
+				A5C8772622E1D0A200583DD5 /* DYProgressHUDConfig.h */,
+				A5C8772722E1D0A200583DD5 /* DYProgressAbility.a */,
+				A5C8772822E1D0A200583DD5 /* UIImage+HUDHelper.h */,
+			);
+			path = DYProgressAbilitySL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -66,6 +87,7 @@
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
+				A5C8772A22E1D0F800583DD5 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -95,6 +117,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -106,6 +129,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5C8772A22E1D0F800583DD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5C8772B22E1D0FC00583DD5 /* DYHUD.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -204,12 +238,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
+					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DYProgressAbilitySL",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNFfToast;
 				SKIP_INSTALL = YES;
@@ -225,7 +262,10 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/DYProgressAbilitySL",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RNFfToast;
 				SKIP_INSTALL = YES;
