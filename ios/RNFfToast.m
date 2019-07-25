@@ -9,13 +9,13 @@
 {
     return dispatch_get_main_queue();
 }
-RCT_EXPORT_MODULE(RNFFHUD)
+RCT_EXPORT_MODULE(RNFfToast)
 
 - (UIColor *)getColorByArr:(NSArray *)arr {
     CGFloat r = [arr[0] floatValue]/255.0;
     CGFloat g = [arr[1] floatValue]/255.0;
-    CGFloat b = [arr[0] floatValue]/255.0;
-    CGFloat a = [arr[0] floatValue]/255.0;
+    CGFloat b = [arr[2] floatValue]/255.0;
+    CGFloat a = [arr[3] floatValue];
     return [UIColor colorWithRed:r green:g blue:b alpha:a];
 }
 
